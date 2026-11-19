@@ -1,0 +1,14 @@
+{
+  "name": "Web Terminal",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y tmux",
+  "forwardPorts": [5173, 3000],
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  }
+}
