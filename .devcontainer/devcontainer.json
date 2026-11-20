@@ -9,11 +9,11 @@
   "portsAttributes": {
     "5173": {
       "label": "Vite",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "silent"
     },
     "3000": {
       "label": "Node",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "silent"
     }
   },
   "customizations": {
