@@ -1,9 +1,0 @@
-{
-  "name": "my-worker",
-  "main": "src/index.ts",          // entry point kod awak
-  "compatibility_date": "2025-01-01",
-  "observability": { "enabled": true },
-  "routes": [                       // (pilihan) domain sendiri — lepas deploy
-    { "pattern": "api.domainawak.com", "custom_domain": true }
-  ]
-}
