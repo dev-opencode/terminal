@@ -4,11 +4,27 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:1": {}
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y tmux",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y tmux git curl",
   "forwardPorts": [5173, 3000],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite",
+      "onAutoForward": "openBrowser"
+    },
+    "3000": {
+      "label": "Node",
+      "onAutoForward": "openBrowser"
+    }
+  },
   "customizations": {
     "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+      "settings": {
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
     }
   }
 }
