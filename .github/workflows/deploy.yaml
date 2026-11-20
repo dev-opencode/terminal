@@ -18,6 +18,7 @@ jobs:
     permissions:
       contents: read
       packages: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,11 +27,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: web-terminal/client/package-lock.json
 
       - name: Build client
+        working-directory: web-terminal/client
         run: |
-          cd client
-          npm install
+          npm ci
           npm run build
 
       - name: Set up Docker Buildx
@@ -56,6 +59,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+
     steps:
       - name: Deploy ke VPS melalui SSH
         uses: appleboy/ssh-action@v1.2.0
